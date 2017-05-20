@@ -16,9 +16,8 @@ The guide is written with the Linux beginner in mind. Therefore, I have added a 
 
 You can discuss this guide on:
 
-* **Kodi Community Forum** — 
-* **reddit** — 
-* **GitHub** —
+* **Kodi Community Forum** — [You can discuss and ask for help here](http://forum.kodi.tv/showthread.php?tid=314656)
+* **GitHub** — [You can log issues here](https://github.com/solbero/guide-kodi-lutris/issues)
 
 ## Demo
 
