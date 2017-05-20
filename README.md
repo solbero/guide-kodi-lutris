@@ -1,6 +1,6 @@
 # Guide: Making a gaming home theater PC with Kodi and Lutris
 
-**This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_(software)) and [Lutris](https://lutris.net/) on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
+**This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_(software) and [Lutris](https://lutris.net/) on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
 
 I have earlier created another guide titled [Minimal Ubuntu 16.04 with Kodi, Steam & EmulationStation](http://forum.kodi.tv/showthread.php?tid=282593) where I tried to achieve something similar. However, I never felt that the approach described in that guide was satisfactory. It relied on launching Steam and/or [EmulationStation](http://www.emulationstation.org/) as separate applications outside of Kodi for playing games.
 
@@ -25,7 +25,26 @@ You can discuss this guide on:
 
 ## Index
 
-[TOC]
+   * [Guide: Making a gaming home theater PC with Kodi and Lutris](#guide-making-a-gaming-home-theater-pc-with-kodi-and-lutris)
+      * [1. MinimalCD install of Xubuntu 16.04](#1-minimalcd-install-of-xubuntu-1604)
+         * [1.1 Creating a bootable USB flash drive](#11-creating-a-bootable-usb-flash-drive)
+         * [1.2 Installation](#12-installation)
+      * [2. SSH and configuration](#2-ssh-and-configuration)
+         * [2.1. Connecting to your HTPC through SSH](#21-connecting-to-your-htpc-through-ssh)
+         * [2.2 Creating a user with limited priviledges](#22-creating-a-user-with-limited-priviledges)
+         * [2.3. Adding PPAs and programs](#23-adding-ppas-and-programs)
+         * [2.4. Installing a web browser](#24-installing-a-web-browser)
+         * [2.5. Creating a Kodi Openbox session](#25-creating-a-kodi-openbox-session)
+         * [2.6. Setting up auto login](#26-setting-up-auto-login)
+         * [2.7. Adding a Kodi splash screen](#27-adding-a-kodi-splash-screen)
+         * [Rebooting and applying changes](#rebooting-and-applying-changes)
+      * [3. Gluing Kodi and Lutris together](#3-gluing-kodi-and-lutris-together)
+         * [3.1. Installing the Lutris Kodi add-on](#31-installing-the-lutris-kodi-add-on)
+         * [3.2. Configuring Lutris](#32-configuring-lutris)
+      * [Additional information](#additional-information)
+      * [Lisence](#lisence)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## 1. MinimalCD install of Xubuntu 16.04
 
@@ -352,9 +371,9 @@ Most Kodi skins, except the default skin Estuary, support [custom home menu item
 
 Configuration and installation of games of Lutris, Steam and other game providers such as Itch and GOG cannot be done through Kodi. To do so you need to log into a Xubuntu session. To do so go to “Power” in the main menu of Kodi and select “Exit” in the dialogue. This will log you out of the Kodi and the Kodi Openbox session.
 
-You should now see the LightDM login screen. Before you log in as USER, you need to select the session you want to log into. In the upper right-hand corner of the login screen there is a session icon you can click which will show you a drop-down list of the available sessions. Click the icon and select “Xubuntu Session”.  Then log in as USER.
+You should now see the LightDM login screen. Before you log in as USER, you need to select the session you want to log into. In the upper right-hand corner of the login screen there is a session icon you can click which will show you a drop-down list of the available sessions. Click the icon and select “Xubuntu Session”. Then log in as USER.
 
-![Change session illustration](./images/change_session.png)    
+![Change session illustration](./images/change_session.png)
 
 To get back to the Kodi Openbox session later you can either restart your HTPC or log out of your current session, select the Kodi Openbox session from the drop-down and log in as USER.
 
