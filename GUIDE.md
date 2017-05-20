@@ -1,48 +1,22 @@
-# Guide: Making a gaming home theater PC with Kodi and Lutris
-
-**This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_(software) and [Lutris](https://lutris.net/) on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
-
-I have earlier created another guide titled [Minimal Ubuntu 16.04 with Kodi, Steam & EmulationStation](http://forum.kodi.tv/showthread.php?tid=282593) where I tried to achieve something similar. However, I never felt that the approach described in that guide was satisfactory. It relied on launching Steam and/or [EmulationStation](http://www.emulationstation.org/) as separate applications outside of Kodi for playing games.
-
-Using Lutris, however, it is possible to create a much more coherent media center and gaming experience.
-
-> Lutris is an open source gaming platform for GNU/Linux. It allows you to gather and manage (install, configure and launch) all your games acquired from any source, in a single interface.
-
-All games will be organized natively in Kodi and no external applications are ever launched, except the games you want to play!
-
-The guide is written with the Linux beginner in mind. Therefore, I have added a lot of links to external resources where you can read up on the different topics covered in the guide. If anything seems unclear, you need some help, or notice a mistake in the guide, please let me know using one of the channels below.
-
-## Discussion
-
-You can discuss this guide on:
-
-* **Kodi Community Forum** — [You can discuss and ask for help here](http://forum.kodi.tv/showthread.php?tid=314656)
-* **GitHub** — [You can log issues here](https://github.com/solbero/guide-kodi-lutris/issues)
-
-## Demo
-
-[![Click to watch a demo](./images/demo.png)](https://youtu.be/F2CYRGDAZqU)
-
 ## Index
 
-   * [Guide: Making a gaming home theater PC with Kodi and Lutris](#guide-making-a-gaming-home-theater-pc-with-kodi-and-lutris)
-      * [1. MinimalCD install of Xubuntu 16.04](#1-minimalcd-install-of-xubuntu-1604)
-         * [1.1 Creating a bootable USB flash drive](#11-creating-a-bootable-usb-flash-drive)
-         * [1.2 Installation](#12-installation)
-      * [2. SSH and configuration](#2-ssh-and-configuration)
-         * [2.1. Connecting to your HTPC through SSH](#21-connecting-to-your-htpc-through-ssh)
-         * [2.2 Creating a user with limited priviledges](#22-creating-a-user-with-limited-priviledges)
-         * [2.3. Adding PPAs and programs](#23-adding-ppas-and-programs)
-         * [2.4. Installing a web browser](#24-installing-a-web-browser)
-         * [2.5. Creating a Kodi Openbox session](#25-creating-a-kodi-openbox-session)
-         * [2.6. Setting up auto login](#26-setting-up-auto-login)
-         * [2.7. Adding a Kodi splash screen](#27-adding-a-kodi-splash-screen)
-         * [Rebooting and applying changes](#rebooting-and-applying-changes)
-      * [3. Gluing Kodi and Lutris together](#3-gluing-kodi-and-lutris-together)
-         * [3.1. Installing the Lutris Kodi add-on](#31-installing-the-lutris-kodi-add-on)
-         * [3.2. Configuring Lutris](#32-configuring-lutris)
-      * [Additional information](#additional-information)
-      * [Lisence](#lisence)
+* [1. MinimalCD install of Xubuntu 16.04](#1-minimalcd-install-of-xubuntu-1604)
+   * [1.1 Creating a bootable USB flash drive](#11-creating-a-bootable-usb-flash-drive)
+   * [1.2 Installation](#12-installation)
+* [2. SSH and configuration](#2-ssh-and-configuration)
+   * [2.1. Connecting to your HTPC through SSH](#21-connecting-to-your-htpc-through-ssh)
+   * [2.2 Creating a user with limited priviledges](#22-creating-a-user-with-limited-priviledges)
+   * [2.3. Adding PPAs and programs](#23-adding-ppas-and-programs)
+   * [2.4. Installing a web browser](#24-installing-a-web-browser)
+   * [2.5. Creating a Kodi Openbox session](#25-creating-a-kodi-openbox-session)
+   * [2.6. Setting up auto login](#26-setting-up-auto-login)
+   * [2.7. Adding a Kodi splash screen](#27-adding-a-kodi-splash-screen)
+   * [Rebooting and applying changes](#rebooting-and-applying-changes)
+* [3. Gluing Kodi and Lutris together](#3-gluing-kodi-and-lutris-together)
+   * [3.1. Installing the Lutris Kodi add-on](#31-installing-the-lutris-kodi-add-on)
+   * [3.2. Configuring Lutris](#32-configuring-lutris)
+* [Additional information](#additional-information)
+* [Lisence](#lisence)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -414,7 +388,3 @@ This section is not a part of the main guide. I have included it so that those f
 * You can [autostart](http://openbox.org/wiki/Help:Autostart) programs and commands when the Kodi Openbox session is launched. You can do this by adding the relevant commands to `/.config/openbox/autostart`. You might have to create the file since it doesn’t exist by default.
 * You can also autostart programs and commands when Kodi is started, terminated or killed in the Kodi Openbox session. You can do this by adding the relevant commands to `~/.kodi-openbox/onstart`, `~/.kodi-openbox/onfinish` or `~/.kodi-openbox/onkill`.
 * Lutris (v0.4.9) currently supports the following runners: Linux (Native games), Steam, Web, WINE, WINE + Steam, Libretro, DOSBox, MAME, MESS, ScummVM, ResidualVM, Adventure Game Studio, Mednafen, FS-UAE, Vice, Stella, Atari800, Hatari, Virtual Jaguar, Snes9x, Mupen64Plus, Dolphin, PCSX-Reloaded, PCSX2, PPSSPP, Osmose, Reicast, Frotz, jzIntv, O2EM, ZDoom, Citra, DeSmuME and DGen.
-
-## Lisence
-
-This work is licensed under a Creative Commons Attribution 4.0 International License.
