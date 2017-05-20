@@ -1,6 +1,6 @@
 # Guide: Making a gaming home theater PC with Kodi and Lutris
 
-**This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_\(software)\) and [Lutris](https://lutris.net/) on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
+**This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_\(software\)) and [Lutris](https://lutris.net/) on a [HTPC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
 
 The guide itself is a separate file which you can find [HERE](./GUIDE.md).
 
