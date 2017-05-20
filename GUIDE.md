@@ -363,6 +363,8 @@ To create an account click on “Lutris” → “Register account” in Lutris.
 
 After you have created an account go to “Lutris” → “Connect” to link the client with the website. If you linked your Steam account, all your Steam games should be automatically added to Lutris.
 
+You could also tell Lutris to search for newly installed games from local game sources at startup. To do so go to “Lutris” → “Import” and switch the toggle next to the game source from “Off” to “On“. At the moment Steam, Steam for Windows, Desktop Games and ScummVM is supported.
+
 To install games you can use automatic installer scripts. Go to [lutris.net/games/](https://lutris.net/games/) and search for the game you wish to install. Make sure that you use an installer script written for Linux, or WINE if installing a Windows game in Linux. All games you install with the automatic scripts will be installed to `~/Games/`, except for Steam games which are installed to `~/.steam/`.
 
 If there is no installer script for the game you wish to install you can add it manually to Lutris. You need to have installed the game before hand.
