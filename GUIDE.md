@@ -11,12 +11,11 @@
    * [2.5. Creating a Kodi Openbox session](#25-creating-a-kodi-openbox-session)
    * [2.6. Setting up auto login](#26-setting-up-auto-login)
    * [2.7. Adding a Kodi splash screen](#27-adding-a-kodi-splash-screen)
-   * [Rebooting and applying changes](#rebooting-and-applying-changes)
+   * [2.8. Rebooting and applying changes](#28-rebooting-and-applying-changes)
 * [3. Gluing Kodi and Lutris together](#3-gluing-kodi-and-lutris-together)
    * [3.1. Installing the Lutris Kodi add-on](#31-installing-the-lutris-kodi-add-on)
    * [3.2. Configuring Lutris](#32-configuring-lutris)
-* [Additional information](#additional-information)
-* [Lisence](#lisence)
+* [4. Additional information](#4-additional-information)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
@@ -273,7 +272,7 @@ cd ~/
 sudo rm -r plymouth-theme-kodi-animated-logo plymouth-theme-kodi-animated-logo.zip
 ```
 
-### Rebooting and applying changes
+### 2.8. Rebooting and applying changes
 
 Reboot the HTPC to apply all the changes you have made since part 2.1.
 
@@ -377,7 +376,7 @@ When you have installed your games and added them to Lutris it is time to test e
 
 Navigate to the Lutris add-on in Kodi and play a game!
 
-## Additional information
+## 4. Additional information
 
 This section is not a part of the main guide. I have included it so that those familiar with Linux can get some more information on customizing this HTPC setup. I will mostly provide link to guides and other web pages.
 
