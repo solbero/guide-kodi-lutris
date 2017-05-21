@@ -35,7 +35,7 @@ Before booting you HTPC from the USB flash drive, make sure that it is connected
 
 Installing the MinimalCD image is straight forward, but it looks intimidating since it is not done through a fancy GUI. If you screw up it is not a problem. Simply turn of your HTPC and start the installation process from the beginning.
 
-Many of the steps shown below are copied and modified from the forum thread [Automated XBMC minimal installer v0.93 for Ubuntu 12.04 > 14.04](http://forum.kodi.tv/showthread.php?tid=189241&pid=1653111#pid1653111) by Hack_kid which in turn is based on a guide written by bram77.
+Many of the steps shown below are copied and modified from the Kodi Community Forum thread [Automated XBMC minimal installer v0.93 for Ubuntu 12.04 > 14.04](http://forum.kodi.tv/showthread.php?tid=189241&pid=1653111#pid1653111) by Hack_kid which in turn is based on a guide written by bram77.
 
 1. Connect a keyboard and a mouse to your HTPC. Make sure your HTPC is turned off. 
 2. Take the USB flash drive containing the ISO image you created earlier and insert it into one of your HTPC’s USB slots; power it on.
@@ -214,7 +214,7 @@ Then remove the files you downloaded and extracted.
 ```sh
 cd ~/
 
-sudo rm -r kodi-openbox-master kodi-openbox-master.zip
+rm -r kodi-openbox-master kodi-openbox-master.zip
 ```
 
 ### 2.6. Setting up auto login
@@ -269,7 +269,7 @@ Remove the files you downloaded.
 ```sh
 cd ~/
 
-sudo rm -r plymouth-theme-kodi-animated-logo plymouth-theme-kodi-animated-logo.zip
+rm -r plymouth-theme-kodi-animated-logo plymouth-theme-kodi-animated-logo.zip
 ```
 
 ### 2.8. Rebooting and applying changes
@@ -316,7 +316,7 @@ mkdir ~/.kodi/addons/script.lutris
 cp -r script.lutris-master/* .kodi/addons/script.lutris/
 ```
 
-You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on, you can edit the addon’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed).
+You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on’s settings dialogue in Kodi, you can edit the addon’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed) in the terminal.
 
 ```sh
 sed -i "s#value=\"lutris\"#value=\"/usr/bin/lutris\"#" .kodi/addons/script.lutris/resources/settings.xml
