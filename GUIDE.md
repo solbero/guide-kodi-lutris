@@ -5,7 +5,7 @@
    * [1.2 Installation](#12-installation)
 * [2. SSH and configuration](#2-ssh-and-configuration)
    * [2.1. Connecting to your HTPC through SSH](#21-connecting-to-your-htpc-through-ssh)
-   * [2.2 Creating a user with limited priviledges](#22-creating-a-user-with-limited-priviledges)
+   * [2.2. Creating a user with limited privileges](#22-creating-a-user-with-limited-privileges)
    * [2.3. Adding PPAs and programs](#23-adding-ppas-and-programs)
    * [2.4. Installing a web browser](#24-installing-a-web-browser)
    * [2.5. Creating a Kodi Openbox session](#25-creating-a-kodi-openbox-session)
@@ -79,7 +79,7 @@ When you have made a successful connection to the HTPC you should see a terminal
 ADMIN@HOSTNAME:~$
 ```
 
-### 2.2 Creating a user with limited priviledges
+### 2.2. Creating a user with limited privileges
 
 Kodi and Lutris will be run by a user with limited privileges. The reason for this is security since this user will have no password and will login automatically. The limited user will have restricted access to the OS (e.g. installing programs system wide or change security settings).
 
@@ -307,13 +307,13 @@ Now you need to download the [Lutris Kodi add-on](https://github.com/RobLoach/sc
 ```sh
 cd ~/
 
-wget -O script.lutris-master.zip https://github.com/RobLoach/script.lutris/archive/master.zip
+wget -O lutris-kodi-addon-master.zip https://github.com/RobLoach/script.lutris/archive/master.zip
 
-unzip script.lutris-master.zip
+unzip lutris-kodi-addon-master.zip
 
 mkdir ~/.kodi/addons/script.lutris
 
-cp -r script.lutris-master/* .kodi/addons/script.lutris/
+cp -r lutris-kodi-addon-master/* .kodi/addons/script.lutris/
 ```
 
 You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on’s settings dialogue in Kodi, you can edit the addon’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed) in the terminal.
@@ -327,7 +327,7 @@ Remove the files you downloaded.
 ```sh
 cd ~/
 
-rm -r script.lutris-master script.lutris-master.zip
+rm -r lutris-kodi-addon-master lutris-kodi-addon-master.zip
 ```
 
 The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”. 
