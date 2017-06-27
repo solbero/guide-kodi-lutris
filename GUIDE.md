@@ -37,9 +37,9 @@ Installing the MinimalCD image is straight forward, but it looks intimidating si
 
 Many of the steps shown below are copied and modified from the Kodi Community Forum thread [Automated XBMC minimal installer v0.93 for Ubuntu 12.04 > 14.04](http://forum.kodi.tv/showthread.php?tid=189241&pid=1653111#pid1653111) by Hack_kid which in turn is based on a guide written by bram77.
 
-1. Connect a keyboard and a mouse to your HTPC. Make sure your HTPC is turned off. 
+1. Connect a keyboard and a mouse to your HTPC. Make sure your HTPC is turned off.
 2. Take the USB flash drive containing the ISO image you created earlier and insert it into one of your HTPC’s USB slots; power it on.
-3. In most cases no BIOS adjustments are required and your HTPC will automatically boot from the USB flash drive. If it didn’t, you need to [specify in BIOS](https://www.lifewire.com/how-to-enter-bios-2624481) that you want to boot from the USB flash drive. Most computers also have an option to press a specific key at boot time (usually labeled “Boot order”) which will bring up a dialogue where you can select the USB flash drive as your boot option.
+3. In most cases no BIOS adjustments are required and your HTPC will automatically boot from the USB flash drive. If it didn’t, you need to [specify in BIOS](https://www.lifewire.com/how-to-enter-bios-2624481) that you want to boot from the USB flash drive. Most computers also have an option to press a specific key at boot time (usually labeled “Boot order”) which will bring up a dialog where you can select the USB flash drive as your boot option.
 4. Unetbootin will display a screen where you can choose different ways to start the MinimalCD installation. Choose “Install” or “Default” on this screen.
 5. Choose your preferred installation language, preferably English because that’s the language I’ll be using in this in this guide. You’ll be able to choose your preferred language for Kodi in Kodi’s settings later on.
 6. Choose the country you reside in (For me it’s “Other” → “Europe” → “Norway”).
@@ -73,7 +73,7 @@ If you are connecting through a computer running Windows, download [PuTTY](http:
 
 You will now be prompted to trust the connection, then enter your password. Note that you will not see your cursor moving, or any characters, when typing your password.
 
-When you have made a successful connection to the HTPC you should see a terminal prompt looking like the one below. ADMIN will be replaced by your username and HOSTNAME with the HTPC’s hostname. 
+When you have made a successful connection to the HTPC you should see a terminal prompt looking like the one below. ADMIN will be replaced by your username and HOSTNAME with the HTPC’s hostname.
 
 ```sh
 ADMIN@HOSTNAME:~$
@@ -97,7 +97,7 @@ You also have to assign some privileges to the newly created user. Remember to r
 sudo usermod -a -G cdrom,video,plugdev,users,input,netdev,fuse USER
 ```
 
-This command gives the limited user user access to the CD-ROM (cdrom), video devices (video), connected external devices (plugdev), controller and joystick input (input), connected wireless and ethernet networks (netdev) and mounted user-space filesystems (fuse).
+This command gives the limited user user access to the CD-ROM (cdrom), video devices (video), connected external devices (plugdev), controller and joystick input (input), connected wireless and Ethernet networks (netdev) and mounted user-space file-systems (fuse).
 
 ### 2.3. Adding PPAs and programs
 
@@ -111,7 +111,7 @@ sudo apt-add-repository ppa:team-xbmc/ppa
 
 Press Enter when prompted.
 
-Lutris is not included in Xubuntu 16.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the command box below must be entered as a separately.
+Lutris is not included in Xubuntu 16.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the command box below must be entered as a separate command.
 
 ```sh
 ver=$(lsb_release -sr); if [ $ver != "16.10" -a $ver != "17.04" -a $ver != "16.04" ]; then ver=16.04; fi
@@ -251,7 +251,7 @@ wget -O plymouth-theme-kodi-animated-logo-master.zip https://github.com/solbero/
 Extract the .zip file.
 
 ```sh
-unzip plymouth-theme-kodi-animated-logo-master.zip 
+unzip plymouth-theme-kodi-animated-logo-master.zip
 ```
 
 Move into the extracted directory, create a .deb package from the extracted content and install the .deb.
@@ -316,7 +316,7 @@ mkdir ~/.kodi/addons/script.lutris
 cp -r lutris-kodi-addon-master/* .kodi/addons/script.lutris/
 ```
 
-You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on’s settings dialogue in Kodi, you can edit the addon’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed) in the terminal.
+You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on’s settings dialogue in Kodi, you can edit the add-on’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed) in the terminal.
 
 ```sh
 sed -i "s#value=\"lutris\"#value=\"/usr/bin/lutris\"#" .kodi/addons/script.lutris/resources/settings.xml
@@ -330,7 +330,7 @@ cd ~/
 rm -r lutris-kodi-addon-master lutris-kodi-addon-master.zip
 ```
 
-The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”. 
+The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”.
 
 To log out of the remote SSH connection, enter this command.
 
@@ -342,7 +342,7 @@ Most Kodi skins, except the default skin Estuary, support [custom home menu item
 
 ### 3.2. Configuring Lutris
 
-Configuration and installation of games of Lutris, Steam and other game providers such as Itch and GOG cannot be done through Kodi. To do so you need to log into a Xubuntu session. To do so go to “Power” in the main menu of Kodi and select “Exit” in the dialogue. This will log you out of the Kodi and the Kodi Openbox session.
+Configuration and installation of games of Lutris, Steam and other game providers such as Itch and GOG cannot be done through Kodi. To do so you need to log into a Xubuntu session. To do so go to “Power” in the main menu of Kodi and select “Exit” in the dialog. This will log you out of the Kodi and the Kodi Openbox session.
 
 You should now see the LightDM login screen. Before you log in as USER, you need to select the session you want to log into. In the upper right-hand corner of the login screen there is a session icon you can click which will show you a drop-down list of the available sessions. Click the icon and select “Xubuntu Session”. Then log in as USER.
 
@@ -352,11 +352,11 @@ To get back to the Kodi Openbox session later you can either restart your HTPC o
 
 You should now see a very minimal Xubuntu desktop. The small Xubuntu icon in the upper left-hand corner is the application menu. Click on it, find Lutris and open the program.
 
-I would strongly suggest that you create an account on lutris.net before you add any games to Lutris. 
+I would strongly suggest that you create an account on lutris.net before you add any games to Lutris.
 
 > Like Steam or Desura, Lutris has two parts: a website and a client application, which communicate. On the website, you can browse the supported games, add them to your personal library and start their installation by clicking on the Install link for the version of the game you possess (if someone bothered to make an installer for it). Granted that you have installed the client software, it will open the game installation window, leading you through the steps to finalize the game’s setup. Once it’s done, you will be able to launch the game directly or close the installation window and the game will be present in your local library the next time you start Lutris.
 
-To create an account click on “Lutris” → “Register account” in Lutris. The page [lutris.net/user/register/](https://lutris.net/user/register/) should upen up in the web browser you installed earlier. After you have created a Lutris account, you can link your Steam account to it if you like.
+To create an account click on “Lutris” → “Register account” in Lutris. The page [lutris.net/user/register/](https://lutris.net/user/register/) should open up in the web browser you installed earlier. After you have created a Lutris account, you can link your Steam account to it if you like.
 
 > To import your Steam library, go to your Lutris profile and click the “Sign in through Steam” button. You will then be redirected to Steam and will be asked to login. This steps associates your Steam account with your Lutris account. This procedure does not grant Lutris any rights on your Steam account, the only info we get from this is your Steam account identifier. Your Steam account has to be public in order for the library sync to work, if you like it private, you can make it public before the import and switch it back when completed.
 
@@ -384,8 +384,8 @@ This section is not a part of the main guide. I have included it so that those f
 * Gamepads which work out of the box on Linux are, but not limited to, the Sony DualShock 3, DualShock 4 and Sixaxis; Steam Controller; Microsoft Xbox 360; Logitech F310, F510, F710 and gamepads made by 8Bitdo.
 * I’m using [MoltenGamepad](https://github.com/jgeumlek/MoltenGamepad) as an abstraction layer for all my controllers. It makes games agnostic to what controller I’m actually using.
 * You can use [AntiMicro](https://github.com/AntiMicro/antimicro) and custom game launch scripts to make a controller simulate a mouse and keyboard in games which doesn’t support controllers.
-* I have installed the lastest stable [MESA](https://en.wikipedia.org/wiki/Mesa_(computer_graphics)) provided from the [“Ubuntu-X” team PPA](https://launchpad.net/~ubuntu-x-swat/+archive/ubuntu/updates) since I’m running on Intel Integrated Graphics. I recommend you install this PPA if you are running on Intel or AMD graphics hardware.
-* If you are running Nvidia hardware, you can install the latest stable and long-lived branches of the Nvidia closed source driver from the [Proprietary GPU Drivers PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa). 
+* I have installed the latest stable [MESA](https://en.wikipedia.org/wiki/Mesa_(computer_graphics)) provided from the [“Ubuntu-X” team PPA](https://launchpad.net/~ubuntu-x-swat/+archive/ubuntu/updates) since I’m running on Intel Integrated Graphics. I recommend you install this PPA if you are running on Intel or AMD graphics hardware.
+* If you are running nVidia hardware, you can install the latest stable and long-lived branches of the nVidia closed source driver from the [Proprietary GPU Drivers PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa).
 * You can [autostart](http://openbox.org/wiki/Help:Autostart) programs and commands when the Kodi Openbox session is launched. You can do this by adding the relevant commands to `/.config/openbox/autostart`. You might have to create the file since it doesn’t exist by default.
 * You can also autostart programs and commands when Kodi is started, terminated or killed in the Kodi Openbox session. You can do this by adding the relevant commands to `~/.kodi-openbox/onstart`, `~/.kodi-openbox/onfinish` or `~/.kodi-openbox/onkill`.
 * Lutris (v0.4.9) currently supports the following runners: Linux (Native games), Steam, Web, WINE, WINE + Steam, Libretro, DOSBox, MAME, MESS, ScummVM, ResidualVM, Adventure Game Studio, Mednafen, FS-UAE, Vice, Stella, Atari800, Hatari, Virtual Jaguar, Snes9x, Mupen64Plus, Dolphin, PCSX-Reloaded, PCSX2, PPSSPP, Osmose, Reicast, Frotz, jzIntv, O2EM, ZDoom, Citra, DeSmuME and DGen.
