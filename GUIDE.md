@@ -175,11 +175,11 @@ There are several guides on the Internet and on the [Kodi Community Forum](http:
 
 To install kodi-openbox, download the latest .zip file from the GitHub master branch using the command below.
 
-````sh
+```sh
 cd ~/
 
 wget -O kodi-openbox-master.zip https://github.com/lufinkey/kodi-openbox/archive/master.zip
-````
+```
 
 Extract the .zip file.
 
@@ -302,32 +302,26 @@ The terminal prompt should now look like this.
 USER@HOSTNAME:~$
 ```
 
-Now you need to download the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. Instead of installing the add-on through SuperRepo as described on the add-on’s GitHub page, you’ll install it manually through the terminal.
+Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. To get the add-on you need to install a third party repository.
 
 ```sh
 cd ~/
 
-wget -O lutris-kodi-addon-master.zip https://github.com/RobLoach/script.lutris/archive/master.zip
-
-unzip lutris-kodi-addon-master.zip
-
-mkdir ~/.kodi/addons/script.lutris
-
-cp -r lutris-kodi-addon-master/* .kodi/addons/script.lutris/
+wget -O repository.solbero-1.0.0.zip https://github.com/solbero/repository.solbero/raw/master/repository.solbero/repository.solbero-1.0.0.zip
 ```
 
-You also need to tell the Kodi Lutris add-on the path to the `lutris` executable. Instead of doing this through the add-on’s settings dialogue in Kodi, you can edit the add-on’s `settings.xml` with [sed](https://en.wikipedia.org/wiki/Sed) in the terminal.
+To install the repository you have allow "Unknown Sources". To do so visit "Settings" → "System" → "Add-ons" and make sure it is enabled.
 
-```sh
-sed -i "s#value=\"lutris\"#value=\"/usr/bin/lutris\"#" .kodi/addons/script.lutris/resources/settings.xml
-```
+To install the repository go to "Settings" → "Add-ons" → "Install from zip file". Navigate to you Home folder where you downloaded the file solbero.repository-1.0.0.zip.
 
-Remove the files you downloaded.
+Navigate back to the add-ons menu select "Install from repository". From there go to solbero's Kodi add-ons repository → "Program add-ons" → "Lutris"
+
+In the remote terminal, remove the files you downloaded.
 
 ```sh
 cd ~/
 
-rm -r lutris-kodi-addon-master lutris-kodi-addon-master.zip
+rm repository.solbero-1.0.0.zip
 ```
 
 The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”.
