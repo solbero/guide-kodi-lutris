@@ -17,7 +17,7 @@
    * [3.2. Configuring Lutris](#32-configuring-lutris)
 * [4. Additional information](#4-additional-information)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+TOC created with [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## 1. MinimalCD install of Xubuntu 16.04
 
@@ -25,7 +25,7 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 I will assume for the rest of this guide that you have a understanding of basic [Linux terminal commands](http://www.comptechdoc.org/os/linux/usersguide/linux_ugbasics.html) and [SSH](https://en.wikipedia.org/wiki/Secure_Shell). If these two words are entirely new to you, read these two articles before beginning: [Connecting via SSH to your server](https://mediatemple.net/community/products/dv/204403684/connecting-via-ssh-to-your-server) and [Common SSH commands](https://mediatemple.net/community/products/dv/204643550/common-ssh-commands).
 
-The first thing you should do is to install the minimal Xubuntu 16.04 [ISO](https://en.wikipedia.org/wiki/ISO_image) image on your HTPC. Download the [Ubuntu 16.04 LTS MinimalCD ISO image](https://help.ubuntu.com/community/Installation/MinimalCD) for your architecture (most likely 64-bit if you are running on modern hardware). You need to download it to a different computer from the one you wish to install it to.
+The first thing you will do is to install the minimal Xubuntu 16.04 [ISO](https://en.wikipedia.org/wiki/ISO_image) image on your HTPC. Download the [Ubuntu 16.04 LTS MinimalCD ISO image](https://help.ubuntu.com/community/Installation/MinimalCD) for your architecture (most likely 64-bit if you are running on modern hardware). You need to download it to a different computer from the one you wish to install the ISO image on to.
 
 To install the ISO image on your HTPC, you need to create a bootable USB flash drive containing the image you just downloaded. There are many programs available which you could use for creating a bootable USB flash drive, but one that is cross-platform and well regarded is [UNetBootIn](https://unetbootin.github.io/). If you have never created and booted from a USB flash drive before you should have a look at the [Ubuntu documentation](https://help.ubuntu.com/community/Installation/FromUSBStick) on how to do this.
 
@@ -38,12 +38,12 @@ Installing the MinimalCD image is straight forward, but it looks intimidating si
 Many of the steps shown below are copied and modified from the Kodi Community Forum thread [Automated XBMC minimal installer v0.93 for Ubuntu 12.04 > 14.04](http://forum.kodi.tv/showthread.php?tid=189241&pid=1653111#pid1653111) by Hack_kid which in turn is based on a guide written by bram77.
 
 1. Connect a keyboard and a mouse to your HTPC. Make sure your HTPC is turned off.
-2. Take the USB flash drive containing the ISO image you created earlier and insert it into one of your HTPC’s USB slots; power it on.
+2. Take the USB flash drive containing the ISO image you created earlier and insert it into one of your HTPC’s USB slots; power the HTPC on.
 3. In most cases no BIOS adjustments are required and your HTPC will automatically boot from the USB flash drive. If it didn’t, you need to [specify in BIOS](https://www.lifewire.com/how-to-enter-bios-2624481) that you want to boot from the USB flash drive. Most computers also have an option to press a specific key at boot time (usually labeled “Boot order”) which will bring up a dialog where you can select the USB flash drive as your boot option.
 4. Unetbootin will display a screen where you can choose different ways to start the MinimalCD installation. Choose “Install” or “Default” on this screen.
 5. Choose your preferred installation language, preferably English because that’s the language I’ll be using in this in this guide. You’ll be able to choose your preferred language for Kodi in Kodi’s settings later on.
 6. Choose the country you reside in (For me it’s “Other” → “Europe” → “Norway”).
-7. Choose your preferred [locale](https://en.wikipedia.org/wiki/Locale_(computer_software)). Your choice will determine the number format, time format, date format and other minor settings for this installation. I selected “Norway”. The best option for you might be the one that’s pre-selected.
+7. Choose your preferred [locale](https://en.wikipedia.org/wiki/Locale_\(computer_software\)). Your choice will determine the number format, time format, date format and other minor settings for this installation. I selected “Norway”. The best option for you might be the one that’s pre-selected.
 8. In “Configure the keyboard” select “No” and manually choose the keyboard type you use (“Norwegian (eliminate dead keys)” in my case)
 9. The installer will automatically configure you [DHCP](https://en.wikipedia.org/wiki/Dynamic_Host_Configuration_Protocol) settings. After this has succeeded you’ll have a working network connection.
 10. Enter the HTPC’s [hostname](https://en.wikipedia.org/wiki/Hostname) (I used “htpc”). Make sure there are no other computers with the same hostname on your [LAN](https://en.wikipedia.org/wiki/Local_area_network). Make a note of the hostname you selected, you’ll need this later on in the guide.
@@ -54,7 +54,7 @@ Many of the steps shown below are copied and modified from the Kodi Community Fo
 15. In the next screen the installer will ask you if you want to encrypt the home directory of the user you just created, select “No”. It is very important that you select “No”, if you select “Yes” automatic login into Kodi won’t work.
 16. When prompted on how you want the security update to be done, select “Install Security Updates Automatically”.
 17. The next screen is an important one. This is where choose what to install on your HTPC. When prompted to install software select the following: “Minimal Xubuntu desktop” and “SSH server”. Select software with Space, confirm with Enter.
-18. The last thing you’ll install is the [GRUB boot loader](https://en.wikipedia.org/wiki/GNU_GRUB). Select “Yes” if this is the only OS running in the machine and the GRUB boot loader does not interfere with any other boot loaders.
+18. The last thing you’ll install is the [GRUB boot loader](https://en.wikipedia.org/wiki/GNU_GRUB). Select “Yes” if this is the only OS running on the machine and the GRUB boot loader does not interfere with any other boot loaders.
 19. When the installation is complete, remove the USB flash drive from the HTPC and reboot. You should now be greeted by a login screen.
 
 ## 2. SSH and configuration
@@ -63,15 +63,15 @@ Many of the steps shown below are copied and modified from the Kodi Community Fo
 
 To be able to connect over SSH to the HTPC you have to use a [terminal emulator](https://en.wikipedia.org/wiki/Terminal_emulator). In Linux you can press Ctrl+Alt+T to bring up a terminal. In macOS go to “Applications” → “Utilities” → “Terminal”.
 
-Paste the command below into the terminal application (you have to use Ctrl+Shift+V to be able to paste). It is important that you replace ADMIN and HOSTNAME in the terminal command with the username and hostname you selected during installation.
+On Linux and macOS paste the command below into the terminal emulator (you have to use Ctrl+Shift+V to be able to paste). It is important that you replace ADMIN and HOSTNAME in the command below with the username and hostname you selected during installation.
 
 ```sh
 ssh ADMIN@HOSTNAME
 ```
 
-If you are connecting through a computer running Windows, download [PuTTY](http://www.putty.org/) and follow this [guide](https://mediatemple.net/community/products/dv/204404604/using-ssh-in-putty-).
-
 You will now be prompted to trust the connection, then enter your password. Note that you will not see your cursor moving, or any characters, when typing your password.
+
+If you are connecting through a computer running Windows, download [PuTTY](http://www.putty.org/) and follow this [guide](https://mediatemple.net/community/products/dv/204404604/using-ssh-in-putty-).
 
 When you have made a successful connection to the HTPC you should see a terminal prompt looking like the one below. ADMIN will be replaced by your username and HOSTNAME with the HTPC’s hostname.
 
@@ -81,9 +81,9 @@ ADMIN@HOSTNAME:~$
 
 ### 2.2. Creating a user with limited privileges
 
-Kodi and Lutris will be run by a user with limited privileges. The reason for this is security since this user will have no password and will login automatically. The limited user will have restricted access to the OS (e.g. installing programs system wide or change security settings).
+Kodi and Lutris will be run by a user with limited privileges. The reason for this is security since this user will have no password and will login automatically. The limited user will have restricted access to the OS (e.g. it will not be able to install programs system wide or change security settings).
 
-To create a limited user account with a disabled password use the command below. Remember to replace USER with the username you’d like for the limited user account (I used “htpc”). From now on replace USER with the username of the limited user account.
+To create a limited user account with a disabled password use the command below. Remember to replace USER with the username you’d like for the limited user account (I used “htpc”). From now on replace USER in all commands with the username of your limited user account.
 
 ```sh
 sudo adduser --disabled-password --gecos "" USER
@@ -111,7 +111,7 @@ sudo apt-add-repository ppa:team-xbmc/ppa
 
 Press Enter when prompted.
 
-Lutris is not included in Xubuntu 16.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the command box below must be entered as a separate command.
+Lutris is not included in Xubuntu 16.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the code box below must be entered as a separate command.
 
 ```sh
 ver=$(lsb_release -sr); if [ $ver != "16.10" -a $ver != "17.04" -a $ver != "16.04" ]; then ver=16.04; fi
@@ -133,7 +133,7 @@ Now, update the package lists.
 sudo apt-get update
 ```
 
-Install the programs. This command will install Kodi, the Kodi driver for joysticks and gamepads, Lutris, Steam and any dependencies they require.
+Install the programs: this command will install Kodi, the Kodi driver for joysticks and gamepads, Lutris, Steam and any dependencies they require.
 
 ```sh
 sudo apt-get install kodi kodi-peripheral-joystick lutris steam
@@ -228,6 +228,7 @@ sudo nano /etc/lightdm/lightdm.conf
 ```
 
 Paste in the following configuration. Make sure that you replace USER with the limited account’s username.
+
 ```sh
 [Seat:*]
 autologin-user=USER
@@ -302,7 +303,7 @@ The terminal prompt should now look like this.
 USER@HOSTNAME:~$
 ```
 
-Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. To get the add-on you need to install a third party repository.
+Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. To get the add-on you need to install a third party repository which I have created.
 
 ```sh
 cd ~/
@@ -310,21 +311,21 @@ cd ~/
 wget -O repository.solbero-1.0.0.zip https://github.com/solbero/repository.solbero/raw/master/repository.solbero/repository.solbero-1.0.0.zip
 ```
 
-To install the repository you have allow "Unknown Sources". To do so visit "Settings" → "System" → "Add-ons" and make sure it is enabled.
+To install the repository you have allow “Unknown Sources”. To do so visit “Settings” → “System” → “Add-ons” and make sure it is enabled.
 
-To install the repository go to "Settings" → "Add-ons" → "Install from zip file". Navigate to you Home folder where you downloaded the file solbero.repository-1.0.0.zip.
+To install the repository go to “Settings” → “Add-ons” → “Install from zip file”. Navigate to you Home folder where you downloaded the file solbero.repository-1.0.0.zip.
 
-Navigate back to the add-ons menu select "Install from repository". From there go to solbero's Kodi add-ons repository → "Program add-ons" → "Lutris"
+Navigate back to the add-ons menu select “Install from repository”. From there go to solbero's Kodi add-ons repository → “Program add-ons” → “Lutris”. Select and install the add-on.
 
-In the remote terminal, remove the files you downloaded.
+The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”.
+
+Afterwards, n the remote terminal, remove the files you downloaded.
 
 ```sh
 cd ~/
 
 rm repository.solbero-1.0.0.zip
 ```
-
-The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”.
 
 To log out of the remote SSH connection, enter this command.
 
@@ -336,7 +337,7 @@ Most Kodi skins, except the default skin Estuary, support [custom home menu item
 
 ### 3.2. Configuring Lutris
 
-Configuration and installation of games of Lutris, Steam and other game providers such as Itch and GOG cannot be done through Kodi. To do so you need to log into a Xubuntu session. To do so go to “Power” in the main menu of Kodi and select “Exit” in the dialog. This will log you out of the Kodi and the Kodi Openbox session.
+Configuration and installation of games in Lutris, Steam and other game providers such as Itch and GOG cannot be done through Kodi. To do so you need to log into a Xubuntu session. To do so go to “Power” in the main menu of Kodi and select “Exit” in the dialog. This will log you out of the Kodi and the Kodi Openbox session.
 
 You should now see the LightDM login screen. Before you log in as USER, you need to select the session you want to log into. In the upper right-hand corner of the login screen there is a session icon you can click which will show you a drop-down list of the available sessions. Click the icon and select “Xubuntu Session”. Then log in as USER.
 
@@ -364,7 +365,7 @@ If there is no installer script for the game you wish to install you can add it 
 
 > You also have the ability to manually add games to the client, from the “Game” → “Add” menu or from the toolbar button. The Add Game window will let you enter the game’s name, pick the runner [[1\]](https://lutris.net/about/#about-runners) (more runners can be installed from the runners management window, available from “Lutris” → “Manage runners”), browse for the main executable/ROM and enter other necessary details before saving.
 
-To keep everything organized, I have installed all my non-Steam games in individual folders in the folder `~/Games`.
+To keep everything organized i have created the folder `~/Games` in which all my non-Steam games are installed.
 
 When you have installed your games and added them to Lutris it is time to test everything out. Log out of the Xubuntu session, select the Kodi Openbox session from the drop-down in LightDM and log in as USER.
 
