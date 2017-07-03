@@ -27,6 +27,6 @@ You can discuss this guide on:
 
 There is a small amount of flickering in the video due to FFmpeg not handling Kodi well.
 
-## Lisence
+## License
 
 This work is licensed under a Creative Commons Attribution 4.0 International License.
