@@ -2,7 +2,7 @@
 
 **This guide will explain how to set up [Kodi](https://en.wikipedia.org/wiki/Kodi_\(software\)) and [Lutris](https://lutris.net/) on a [Home Theater PC](https://en.wikipedia.org/wiki/Home_theater_PC). The goal is to create a fast, light-weight media and gaming system for the living room in the same vein as [SteamOS](https://en.wikipedia.org/wiki/SteamOS), but with Kodi as the interface.**
 
-[**The guide itself is a separate file named `GUIDE.md`.**](./GUIDE.md).
+[**The guide itself is a separate file named `GUIDE.md`.**](./GUIDE.md)
 
 I have earlier created another guide titled [Minimal Ubuntu 16.04 with Kodi, Steam & EmulationStation](http://forum.kodi.tv/showthread.php?tid=282593) where I tried to achieve something similar. However, I never felt that the approach described in that guide was satisfactory. It relied on launching Steam and/or [EmulationStation](http://www.emulationstation.org/) as separate applications outside of Kodi for playing games.
 
