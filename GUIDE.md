@@ -49,11 +49,11 @@ Many of the steps shown below are copied and modified from the Kodi Community Fo
 10. Enter the HTPC’s [hostname](https://en.wikipedia.org/wiki/Hostname) (I used “htpc”). Make sure there are no other computers with the same hostname on your [LAN](https://en.wikipedia.org/wiki/Local_area_network). Make a note of the hostname you selected, you’ll need this later on in the guide.
 11. Confirm the next two screens with Enter (Ubuntu repositories mirror, default is OK).
 12. If you use a proxy server, please enter the proper configuration in the related screen. Otherwise skip this option by pressing Enter.
-13. The installer will now retrieve the necessary packages from the mirror site. Once it’s done, it will prompt you to reformat your hard drive. I assume that you are going to use the whole hard drive, so in this case, select “Guided – use entire disk”. If not, you can select “Manual” and configure the partitioning accordingly. I won’t go into details here.
-14. Enter your preferred username for the administrator account (I used “admin”) and a strong password. This user will hereafter be referred to as ADMIN (whenever you see ADMIN in this guide, substitute ADMIN with the username you selected in this step). However, Kodi and all programs associated with it will be run by a user with limited privileges which you’ll create later.
-15. In the next screen the installer will ask you if you want to encrypt the home directory of the user you just created, select “No”. It is very important that you select “No”, if you select “Yes” automatic login into Kodi won’t work.
+13. Enter your preferred username for the administrator account (I used “administrator”) and a strong password. This user will hereafter be referred to as ADMIN (whenever you see ADMIN in this guide, substitute ADMIN with the username you selected in this step). However, Kodi and all programs associated with it will be run by a user with limited privileges which you’ll create later.
+14. In the next screen the installer will ask you if you want to encrypt the home directory of the user you just created, select “No”. It is very important that you select “No”, if you select “Yes” automatic login into Kodi won’t work.
+15. The installer will now retrieve the necessary packages from the mirror site. Once it’s done, it will prompt you to reformat your hard drive. I assume that you are going to use the whole hard drive, so in this case, select “Guided – use entire disk”. If not, you can select “Manual” and configure the partitioning accordingly. I won’t go into details here.
 16. When prompted on how you want the security update to be done, select “Install Security Updates Automatically”.
-17. The next screen is an important one. This is where choose what to install on your HTPC. When prompted to install software select the following: “Minimal Xubuntu desktop” and “SSH server”. Select software with Space, confirm with Enter.
+17. The next screen is an important one. This is where choose what to install on your HTPC. When prompted to install software select the following: “Minimal Xubuntu minimal installation” and “OpenSSH server”. Select software with Space, confirm with Enter.
 18. The last thing you’ll install is the [GRUB boot loader](https://en.wikipedia.org/wiki/GNU_GRUB). Select “Yes” if this is the only OS running on the machine and the GRUB boot loader does not interfere with any other boot loaders.
 19. When the installation is complete, remove the USB flash drive from the HTPC and reboot. You should now be greeted by a login screen.
 
@@ -91,13 +91,19 @@ sudo adduser --disabled-password --gecos "" USER
 
 When prompted for a password, enter the ADMIN password you selected during installation.
 
+Make the user able to login without a password.
+
+```sh
+sudo usermod -a -G nopasswdlogin USER
+```
+
 You also have to assign some privileges to the newly created user. Remember to replace USER in the command below.
 
 ```sh
-sudo usermod -a -G cdrom,video,plugdev,users,input,netdev,fuse USER
+sudo usermod -a -G cdrom,video,plugdev,users,input,netdev USER
 ```
 
-This command gives the limited user user access to the CD-ROM (cdrom), video devices (video), connected external devices (plugdev), controller and joystick input (input), connected wireless and Ethernet networks (netdev) and mounted user-space file-systems (fuse).
+This command gives the limited user user access to the CD-ROM (cdrom), video devices (video), connected external devices (plugdev), controller and joystick input (input) and connected wireless and Ethernet networks (netdev).
 
 ### 2.3. Adding PPAs and programs
 
@@ -270,7 +276,7 @@ Remove the files you downloaded.
 ```sh
 cd ~/
 
-rm -r plymouth-theme-kodi-animated-logo plymouth-theme-kodi-animated-logo.zip
+rm -r plymouth-theme-kodi-animated-logo-master plymouth-theme-kodi-animated-logo-master.zip
 ```
 
 ### 2.8. Rebooting and applying changes
@@ -319,7 +325,7 @@ Navigate back to the add-ons menu select “Install from repository”. From the
 
 The add-on will be located in Kodi at “Add-ons” → “Program Add-ons” → “Lutris”.
 
-Afterwards, n the remote terminal, remove the files you downloaded.
+Afterwards, in the remote terminal, remove the files you downloaded.
 
 ```sh
 cd ~/
