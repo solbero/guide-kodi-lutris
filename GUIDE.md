@@ -223,7 +223,41 @@ cd ~/
 rm -r kodi-openbox-master kodi-openbox-master.zip
 ```
 
-### 2.6. Setting up auto login
+### 2.6. Defining a keyboard layout
+
+If you are using a keyboard layout other than US, then you need to tell Openbox to use this layout. First, you need to create the folder where Openbox looks for the its autostart file.
+
+```sh
+mkdir ~/.config/openbox
+```
+
+Then copy over the the default Openbox autostart file to the newly created folder.
+
+```sh
+cp /etc/xdg/openbox/autostart ~/.config/openbox/
+```
+
+Open the file with `nano`.
+
+```sh
+nano ~/.config/openbox/autostart
+```
+
+Append these lines to the bottom of the file.
+
+```sh
+# Set keyboard layout
+setxkbmap KB_LAYOUT
+```
+
+Replace KB_LAYOUT with the language code for your preferred keyboard layout. You can see your installed layouts by issuing the command `less /usr/share/X11/xkb/rules/base.lst`.
+
+Save the file and exit `nano` by pressing Ctrl+X and then Enter.
+
+If you need to specify the keyboard model and/or variant consult the [Arch Wiki’s entry](https://wiki.archlinux.org/index.php/Keyboard_configuration_in_Xorg#Setting_keyboard_layout) on `setxkbmap`.
+
+
+### 2.7. Setting up auto login
 
 When the HTPC is powered on it should automatically log in USER into the Kodi Openbox session. To accomplish this you need to configure [LightDM](https://en.wikipedia.org/wiki/LightDM), the login manager used by Xubuntu 16.04.
 
@@ -243,7 +277,7 @@ autologin-session=kodi-openbox
 
 Save the file by pressing Ctrl+X and then press Enter.
 
-### 2.7. Adding a Kodi splash screen
+### 2.8. Adding a Kodi splash screen
 
 If you want to get rid of the default Xubuntu splash screen during boot, it is possible to change it to a Kodi one. I have set up a [repository](https://github.com/solbero/plymouth-theme-kodi-animated-logo) containing [Kodibuntu’s](http://kodi.wiki/view/Kodibuntu) animated logo splash screen and adapted it for Ubuntu 16.04 and later versions.
 
@@ -279,7 +313,7 @@ cd ~/
 rm -r plymouth-theme-kodi-animated-logo-master plymouth-theme-kodi-animated-logo-master.zip
 ```
 
-### 2.8. Rebooting and applying changes
+### 2.9. Rebooting and applying changes
 
 Reboot the HTPC to apply all the changes you have made since part 2.1.
 
