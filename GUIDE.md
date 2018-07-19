@@ -1,6 +1,6 @@
 ## Index
 
-* [1. MinimalCD install of Xubuntu 16.04](#1-minimalcd-install-of-xubuntu-1604)
+* [1. MinimalCD install of Xubuntu 18.04](#1-minimalcd-install-of-xubuntu-1604)
    * [1.1 Creating a bootable USB flash drive](#11-creating-a-bootable-usb-flash-drive)
    * [1.2 Installation](#12-installation)
 * [2. SSH and configuration](#2-ssh-and-configuration)
@@ -20,13 +20,13 @@
 
 TOC created with [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
-## 1. MinimalCD install of Xubuntu 16.04
+## 1. MinimalCD install of Xubuntu 18.04
 
 ### 1.1 Creating a bootable USB flash drive
 
 I will assume for the rest of this guide that you have a understanding of basic [Linux terminal commands](http://www.comptechdoc.org/os/linux/usersguide/linux_ugbasics.html) and [SSH](https://en.wikipedia.org/wiki/Secure_Shell). If these two words are entirely new to you, read these two articles before beginning: [Connecting via SSH to your server](https://mediatemple.net/community/products/dv/204403684/connecting-via-ssh-to-your-server) and [Common SSH commands](https://mediatemple.net/community/products/dv/204643550/common-ssh-commands).
 
-The first thing you will do is to install the minimal Xubuntu 16.04 [ISO](https://en.wikipedia.org/wiki/ISO_image) image on your HTPC. Download the [Ubuntu 16.04 LTS MinimalCD ISO image](https://help.ubuntu.com/community/Installation/MinimalCD) for your architecture (most likely 64-bit if you are running on modern hardware). You need to download it to a different computer from the one you wish to install the ISO image on to.
+The first thing you will do is to install the minimal Xubuntu 18.04 [ISO](https://en.wikipedia.org/wiki/ISO_image) image on your HTPC. Download the [Ubuntu 18.04 LTS MinimalCD ISO image](https://help.ubuntu.com/community/Installation/MinimalCD) for your architecture (most likely 64-bit if you are running on modern hardware). You need to download it to a different computer from the one you wish to install the ISO image on to.
 
 To install the ISO image on your HTPC, you need to create a bootable USB flash drive containing the image you just downloaded. There are many programs available which you could use for creating a bootable USB flash drive, but one that is cross-platform and well regarded is [UNetBootIn](https://unetbootin.github.io/). If you have never created and booted from a USB flash drive before you should have a look at the [Ubuntu documentation](https://help.ubuntu.com/community/Installation/FromUSBStick) on how to do this.
 
@@ -118,14 +118,14 @@ sudo apt-add-repository ppa:team-xbmc/ppa
 
 Press Enter when prompted.
 
-Lutris is not included in Xubuntu 16.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the code box below must be entered as a separate command.
+Lutris is not included in Xubuntu 18.04 by default, therefore you need to add the Lutris PPA to be able to download it. Please note that each line in the code box below must be entered as a separate command.
 
 ```sh
-ver=$(lsb_release -sr); if [ $ver != "16.10" -a $ver != "17.04" -a $ver != "16.04" ]; then ver=16.04; fi
-
-wget -q http://download.opensuse.org/repositories/home:/strycore/xUbuntu_$ver/Release.key -O- | sudo apt-key add -
+ver=$(lsb_release -sr); if [ $ver != "18.04" -a $ver != "17.10" -a $ver != "17.04" -a $ver != "16.04" ]; then ver=18.04; fi
 
 echo "deb http://download.opensuse.org/repositories/home:/strycore/xUbuntu_$ver/ ./" | sudo tee /etc/apt/sources.list.d/lutris.list
+
+wget -q http://download.opensuse.org/repositories/home:/strycore/xUbuntu_$ver/Release.key -O- | sudo apt-key add -
 ```
 
 To be able to install Steam you must enable the [Multiverse repository](https://help.ubuntu.com/community/Repositories#Multiverse).
@@ -134,16 +134,10 @@ To be able to install Steam you must enable the [Multiverse repository](https://
 sudo add-apt-repository multiverse
 ```
 
-Now, update the package lists.
-
-```sh
-sudo apt-get update
-```
-
 Install the programs: this command will install Kodi, the Kodi driver for joysticks and gamepads, Lutris, Steam and any dependencies they require.
 
 ```sh
-sudo apt-get install kodi kodi-peripheral-joystick lutris steam
+sudo apt install kodi kodi-peripheral-joystick lutris steam
 ```
 
 Press Y when prompted.
@@ -151,7 +145,7 @@ Press Y when prompted.
 Also, at this point, it is a good idea to check for any general updates.
 
 ```sh
-sudo apt-get dist-upgrade
+sudo apt dist-upgrade
 ```
 
 ### 2.4. Installing a web browser
@@ -161,24 +155,30 @@ You should also install a web browser, as it is not included by default with the
 To install Midori:
 
 ```sh
-sudo apt-get install midori
+sudo apt install midori
 ```
 
 To install Firefox:
 
 ```sh
-sudo apt-get install firefox
+sudo apt install firefox
 ```
 
 To install Chromium:
 
 ```sh
-sudo apt-get install chromium-browser
+sudo apt install chromium-browser
 ```
 
 ### 2.5. Creating a Kodi Openbox session
 
 There are several guides on the Internet and on the [Kodi Community Forum](http://forum.kodi.tv/) which explain how to create a separate login session for Kodi to run in. These usually involve a lot of scripting and editing of [init files](https://en.wikipedia.org/wiki/Init). The easiest solution I have found is to download and use [kodi-openbox](https://github.com/lufinkey/kodi-openbox) created by lufinkey. This is a collection of scripts that includes an [Openbox](https://en.wikipedia.org/wiki/Openbox) session that runs Kodi and a script that will launch external programs and manage their windows.
+
+First, install openbox.
+
+```sh
+sudo apt install openbox
+```
 
 To install kodi-openbox, download the latest .zip file from the GitHub master branch using the command below.
 
@@ -197,7 +197,7 @@ unzip kodi-openbox-master.zip
 If you get a prompt telling you are missing the package unzip, install it using the command below, then repeat the command above.
 
 ```sh
-sudo apt-get install unzip
+sudo apt install unzip
 ```
 
 Move into the extracted directory, create a [.deb package](https://en.wikipedia.org/wiki/Deb_(file_format)) from the extracted content and then install the .deb.
@@ -210,10 +210,10 @@ cd kodi-openbox-master
 sudo dpkg -i kodi-openbox.deb
 ```
 
-If you get a warning that you have unmet dependencies (most likely), enter this command.
+If you get a warning that you have unmet dependencies, enter this command.
 
 ```sh
-sudo apt-get -f install
+sudo apt -f install
 ```
 
 Then remove the files you downloaded and extracted.
@@ -260,7 +260,7 @@ If you need to specify the keyboard model and/or variant consult the [Arch Wiki�
 
 ### 2.7. Setting up auto login
 
-When the HTPC is powered on it should automatically log in USER into the Kodi Openbox session. To accomplish this you need to configure [LightDM](https://en.wikipedia.org/wiki/LightDM), the login manager used by Xubuntu 16.04.
+When the HTPC is powered on it should automatically log in USER into the Kodi Openbox session. To accomplish this you need to configure [LightDM](https://en.wikipedia.org/wiki/LightDM), the login manager used by Xubuntu 18.04.
 
 To do so, you need to edit LightDM’s configuration file. The file will be created automatically by the command below if it doesn’t already exist.
 
@@ -280,7 +280,7 @@ Save the file by pressing Ctrl+X and then press Enter.
 
 ### 2.8. Adding a Kodi splash screen
 
-If you want to get rid of the default Xubuntu splash screen during boot, it is possible to change it to a Kodi one. I have set up a [repository](https://github.com/solbero/plymouth-theme-kodi-animated-logo) containing [Kodibuntu’s](http://kodi.wiki/view/Kodibuntu) animated logo splash screen and adapted it for Ubuntu 16.04 and later versions.
+If you want to get rid of the default Xubuntu splash screen during boot, it is possible to change it to a Kodi one. I have set up a [repository](https://github.com/solbero/plymouth-theme-kodi-animated-logo) containing [Kodibuntu’s](http://kodi.wiki/view/Kodibuntu) animated logo splash screen and adapted it for Ubuntu 18.04 and later versions.
 
 To install plymouth-theme-kodi-animated-logo, download the latest .zip file from the GitHub master branch using the command below.
 
@@ -344,7 +344,7 @@ The terminal prompt should now look like this.
 USER@HOSTNAME:~$
 ```
 
-Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. To get the add-on you need to install a third party repository which I have created.
+Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/script.lutris) created by RobLoach. To get the add-on you need to install a third party repository to Kodi.
 
 ```sh
 cd ~/
