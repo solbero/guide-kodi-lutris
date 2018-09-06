@@ -101,7 +101,7 @@ sudo usermod -a -G nopasswdlogin $USER
 You also have to assign some privileges to the user account. Remember to replace $USER.
 
 ```sh
-sudo usermod -a -G cdrom,video,plugdev,users,input,netdev $USER
+sudo usermod -a -G cdrom,video,plugdev,users,input,netdev,dialout $USER
 ```
 
 This command gives the limited user account access to the CD-ROM (cdrom), video devices (video), connected external devices (plugdev), controller and joystick input (input), and connected wireless and Ethernet networks (netdev).
