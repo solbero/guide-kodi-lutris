@@ -1,1 +1,4 @@
-gh-md-toc
+site/
+env/
+.vscode/
+.editorconfig

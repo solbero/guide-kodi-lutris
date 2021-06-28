@@ -1,0 +1,48 @@
+site_name: Kodi Lutris Guide
+
+theme:
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+  icon:
+    logo: material/book-open-page-variant
+    repo: fontawesome/brands/github
+  language: en
+  name: material
+  palette:
+    scheme: kodi
+
+nav:
+    - Home: 'index.md'
+    - Guide:
+      - 'installation.md'
+      - 'desktop.md'
+      - 'programs.md'
+      - 'upgrades.md'
+      - 'user.md'
+      - 'lutris-and-kodi.md'
+      - 'additional.md'
+    - About: 'about.md'
+
+copyright: Creative Commons Attribution 4.0 International
+
+repo_name: solbero/guide-kodi-lutris
+repo_url: https://github.com/solbero/guide-kodi-lutris
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.tabbed
+  - pymdownx.betterem
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - css/extra.css

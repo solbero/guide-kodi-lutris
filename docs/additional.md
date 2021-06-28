@@ -1,0 +1,13 @@
+## 4. Additional information
+
+This section is not a part of the main guide. I have included it so that those familiar with Linux can get some more information on customizing this HTPC setup. I will mostly provide links to guides and other web pages.
+
+* If your controller is not automatically detected by Kodi, you might have [configure it](http://kodi.wiki/view/HOW-TO:Configure_controllers).
+* Gamepads which work out of the box on Linux include, but are not limited to, the Sony DualShock 3, DualShock 4 and Sixaxis; Steam Controller; Microsoft Xbox 360; Logitech F310, F510, F710; and gamepads made by 8Bitdo.
+* I’m using [MoltenGamepad](https://github.com/jgeumlek/MoltenGamepad) as an abstraction layer for all my controllers. It makes games agnostic to what controller I’m actually using.
+* You can use [AntiMicro](https://github.com/AntiMicro/antimicro) and write custom game launch scripts to make a controller simulate a mouse and keyboard in games which don’t support controllers.
+* If you are using Intel or AMD graphics hardware you should install the latest, stable version of [MESA](https://en.wikipedia.org/wiki/Mesa_(computer_graphics)) provided from the [“Ubuntu-X” team PPA](https://launchpad.net/~ubuntu-x-swat/+archive/ubuntu/updates).
+* If you are using nVidia hardware, you can install the latest stable and long-lived branches of the nVidia closed source driver from the [Proprietary GPU Drivers PPA](https://launchpad.net/~graphics-drivers/+archive/ubuntu/ppa).
+* You can [autostart](http://openbox.org/wiki/Help:Autostart) programs and commands when the Kodi Openbox session is launched. You can do this by adding the relevant commands to `/.config/openbox/autostart`. You might have to create the file since it doesn’t exist by default.
+* You can also autostart programs and commands when Kodi is started, terminated or killed in the Kodi Openbox session. You can do this by adding the relevant commands to `~/.kodi-openbox/onstart`, `~/.kodi-openbox/onfinish` or `~/.kodi-openbox/onkill`.
+* Lutris (v0.4.9) currently supports the following runners: Linux (Native games), Steam, Web, WINE, WINE + Steam, Libretro, DOSBox, MAME, MESS, ScummVM, ResidualVM, Adventure Game Studio, Mednafen, FS-UAE, Vice, Stella, Atari800, Hatari, Virtual Jaguar, Snes9x, Mupen64Plus, Dolphin, PCSX-Reloaded, PCSX2, PPSSPP, Osmose, Reicast, Frotz, jzIntv, O2EM, ZDoom, Citra, DeSmuME, DGen and more.

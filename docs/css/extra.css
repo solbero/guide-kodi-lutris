@@ -1,0 +1,18 @@
+[data-md-color-scheme="kodi"] {
+  --md-primary-fg-color:        #12b2e6;
+  --md-primary-fg-color--light: #6BCFEF;
+  --md-primary-fg-color--dark:  #0B6F90;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+  margin-right: auto;
+	width: 66%;
+}
+
+@media screen and (max-width: 600px) {
+  .center {
+    width: 100%;
+  }
+}
