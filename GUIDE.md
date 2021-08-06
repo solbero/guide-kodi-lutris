@@ -349,12 +349,12 @@ Now you need to install the [Lutris Kodi add-on](https://github.com/RobLoach/scr
 ```sh
 cd ~/
 
-wget -O repository.solbero-1.0.1.zip https://github.com/solbero/repository.solbero/raw/master/repository.solbero/repository.solbero-1.0.1.zip
+wget -O repository.solbero.matrix.zip https://github.com/solbero/repository.solbero.matrix/raw/master/repository.solbero.matrix/repository.solbero.matrix.zip
 ```
 
 To install the repository you have to allow “Unknown Sources” in Kodi. This is not done through the terminal, but through Kodi. To do so, visit “Settings” → “System” → “Add-ons” and make sure it is enabled.
 
-To install the repository, go to “Settings” → “Add-ons” → “Install from zip file”. Navigate to your Home folder where you should see a file named solbero.repository-1.0.1.zip.
+To install the repository, go to “Settings” → “Add-ons” → “Install from zip file”. Navigate to your Home folder where you should see a file named solbero.repository.matrix.zip.
 
 Navigate back to the add-ons menu and select “Install from repository”. From there, go to “solbero's Kodi add-ons repository” → “Program add-ons” → “Lutris”. Select and install the add-on.
 
